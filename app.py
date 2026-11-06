@@ -442,7 +442,7 @@ st.sidebar.markdown("""
 """, unsafe_allow_html=True)
 
 n_ops = st.sidebar.number_input("Nº de ordens (sintéticos)", 10, 200, 40, 5)
-seed = st.sidebar.number_input("Semente aleatória", 0, 9999, 42)
+seed = st.sidebar.number_input("Monte Carlo", 0, 9999, 42)
 
 df = pd.read_csv(arq, parse_dates=COLS_DATA) if arq else dados_sinteticos(n_ops, seed)
 dmin = df.plan_inicio.min().floor("30min").to_pydatetime()
